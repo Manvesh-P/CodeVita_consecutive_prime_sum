@@ -1,0 +1,46 @@
+# Some primes can be expressed as the sum of the consecutive prime numbers starting from 2.
+
+N = int(input("Enter the upperlimit: "))
+list1 = []
+list2 = []
+c = 0
+
+n = 3
+while n <= N:
+    i = 2
+    rt = int(n**0.5)
+    while i <= rt:
+        if n % i == 0:
+            break
+        i += 1
+    else:
+        list1.append(n)
+    n += 1
+    
+#print(list1)
+
+n1 = 2
+while n1 <= N:
+    i1 = 2
+    rt1 = int(n1**0.5)
+    while i1 <= rt1:
+        if n1 % i1 == 0:
+            break
+        i1 += 1
+    else:
+        list2.append(n1)
+    n1 += 1
+    
+#print(list2)
+sum1 = 0
+
+for i in range(0, len(list1)):
+    for j in range(0, len(list2)):
+        sum1 = sum1 + list2[j]
+        if sum1 == list1[i]:
+            c += 1
+            
+    sum1 = 0
+
+
+print("The total count is :",c)
