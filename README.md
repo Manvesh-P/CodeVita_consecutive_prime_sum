@@ -1,0 +1,1 @@
+# CodeVita_consecutive_prime_sum
